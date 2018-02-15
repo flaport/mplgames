@@ -91,7 +91,7 @@ class Snake(object):
         self.opposites = {"left":"right", "right":"left", "up":"down", "down":"up"}
 
         # relevant matplotlib parameters:
-        self.plot, = plt.plot(self.x, self.y, "ro")
+        self.plot, = plt.plot(self.x, self.y, "rs", markersize=8)
         self.game.timer.add_callback(self.move)
 
     def change_direction(self, direction):
@@ -161,8 +161,8 @@ class Snake(object):
         ''' The snake bites its own tail and is now dead '''
         print('dead')
 
-        # stop the timer
-        self.game.timer.stop()
+        # stop the timer (and give time to display the Game Over message)
+        self.game.timer.single_shot = True
 
         # delete the head (this is kind of a hack)
         del self.x[0]
