@@ -1,12 +1,14 @@
-# README #
+# Matplotlib Games
 
-A snake game entirely written in python using matplotlib.
+Some games entirely written in python using `matplotlib`.
 
 
-### What is this repository for? ###
+## Why?
 
-* Just for fun
+Of course `matplotlib` is a plotting library and was never intended to write games.
+This repository is just to illustrate what `matplotlib` is capable of.
 
-### Who do I talk to? ###
 
-* http://bitbucket.org/Flaport/
+## Credits
+
+* [Flaport](http://github.com/flaport/)
