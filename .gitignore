@@ -1,1 +1,29 @@
+#############
+## Folders ##
+#############
+
+.vscode
+.DS_Store
+__pycache__
+.temp.compiled
+.ipynb_checkpoints
+
+
+###########
+## Files ##
+###########
+
+## byte code
 *.pyc
+
+## logs
+*.log
+*.swp
+
+## data
+*.data
+*.dat
+*.obj
+*.npy
+*.npz
+*.gz
