@@ -11,7 +11,9 @@ import matplotlib.pyplot as plt
 ## Settings ##
 ##############
 
-plt.rcParams['toolbar'] = 'None'
+plt.switch_backend('TkAgg')
+plt.rcParams['toolbar'] = 'none'
+plt.rcParams['font.size'] = 14
 
 
 ##########
@@ -39,7 +41,7 @@ class SnakeGame(object):
         plt.xlim(-0.5, M-0.5)
         plt.ylim(-0.5, N-0.5)
         plt.grid(False)
-        self.timer = self.fig.canvas.new_timer(interval=1000.0/speed)
+        self.timer = self.fig.canvas.new_timer(interval=int(1000.0/speed))
         self.timer.single_shot = False
         self.ax.set_title("Score: 0")
         self.fig.canvas.set_window_title("Snake")
@@ -173,6 +175,7 @@ class Snake(object):
         self.game.ax.annotate(message, xy=(self.game.M/2, self.game.N/2), fontsize=24,
                               horizontalalignment='center', verticalalignment='center',
                               bbox=dict(facecolor='red', alpha=0.5))
+        plt.draw()
 
 
 ##########
@@ -208,16 +211,3 @@ class Food(object):
         while (self.x, self.y) in forbidden_points:
             self.new_location()
         self.plot.set_data(self.x, self.y)
-
-
-#########
-## Run ##
-#########
-
-if __name__ == '__main__':
-    import sys
-    speed = 15
-    if len(sys.argv) > 1:
-        speed = float(sys.argv[1])
-    snake_game = SnakeGame(speed=speed)
-    snake_game.start()

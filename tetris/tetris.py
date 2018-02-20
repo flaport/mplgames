@@ -37,7 +37,7 @@ class Canvas(object):
         self.fig.subplots_adjust(left=0,right=1,bottom=0,top=1)
         self.ax.set_title('test')
         try: # this only works on windows:
-            plt.get_current_fig_manager().window.wm_iconbitmap("tetris.ico")
+            plt.get_current_fig_manager().window.wm_iconbitmap("img/tetris.ico")
         except:
             pass
         plt.axis('scaled') # squares should be squares
@@ -347,9 +347,3 @@ class Tetris(object):
                 self.board[:,line+1:],
             ), axis=-1)
             self.remove_lines()
-
-
-if __name__ == '__main__':
-    # Play a game of Tetris!
-    tetris = Tetris()
-    tetris.start()
